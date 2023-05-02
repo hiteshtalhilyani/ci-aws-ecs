@@ -48,4 +48,11 @@ Container CI using Jenkins, Nexus, AWS-ECS, Maven, Git, Sonarqube
     3. Create IAM user, Elastic Registry : webappecr
             321503580090.dkr.ecr.ap-south-1.amazonaws.com/webappecr
     4. Jenkins Configuration 
-            
+            1. Install plugins : 
+                    - Docker Pipeline 
+                    - Cloudbees Docker Build and Publish
+                    - Amazon ECR    
+                    - Pipeline: AWS Steps 
+            2. Configure AWS access keys in jenkins - configure credentials
+            3. SSH to Jenkins  
+                    apt update && apt install awscli
