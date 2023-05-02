@@ -13,7 +13,6 @@ pipeline {
 	    //NEXUS_REPOGRP_ID    = "webapp-grp-repo"
         NEXUS_CREDENTIAL_ID = "nexuslogin"
         ARTVERSION = "${env.BUILD_ID}"
-        //
         SNAP_REPO = 'webapp-snapshot'
         NEXUS_USER = 'admin'
         NEXUS_PASS = 'admin'
