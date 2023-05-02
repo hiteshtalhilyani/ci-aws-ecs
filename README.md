@@ -45,4 +45,7 @@ Container CI using Jenkins, Nexus, AWS-ECS, Maven, Git, Sonarqube
         http://3.109.58.80:8080/github-webhook/
     2. Create two directories  
         mkdir ProdPipeline StagePipeline  
-    3. 
+    3. Create IAM user, Elastic Registry : webappecr
+            321503580090.dkr.ecr.ap-south-1.amazonaws.com/webappecr
+    4. Jenkins Configuration 
+            
