@@ -38,3 +38,11 @@ Container CI using Jenkins, Nexus, AWS-ECS, Maven, Git, Sonarqube
             3. Service 
     9. Code to Deploy Docker image to ECS 
     10. Repeat the step for PROD env after manual approval to deploy on ECS Cluster 
+
+
+# Let's Start 
+    1. Create jenkins webhook in your github repository  & test 
+        http://3.109.58.80:8080/github-webhook/
+    2. Create two directories  
+        mkdir ProdPipeline StagePipeline  
+    3. 
