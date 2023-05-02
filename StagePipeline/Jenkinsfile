@@ -112,7 +112,7 @@ pipeline {
                             artifacts: [
                             [artifactId: 'webapp',
                             classifier: '',
-                            file: 'target/webapp-v2.war',
+                            file: 'target/vprofile-v2.war',
                             type: 'war']
                           ]
                         )
