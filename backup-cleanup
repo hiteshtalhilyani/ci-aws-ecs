@@ -1,0 +1,33 @@
+1. Create S3 bucket
+2. Assign S3 role to all EC2 instance
+3. Login to jenkins server 
+        systemctl stop jenkins 
+         cd /var/lib/jenkins/.m2/repository/, rm -rf *
+         cd /var/lib/jenkins/workspace/ , rm -rf * 
+         cd /var/lib/jenkins/jobs/BuildProject/builds # rm -rf 1, 10,.
+         du -sh *
+         cd /var/lib 
+         tar -czvf jenkins_cicdjobs.tar.gz jenkins
+         aws s3 cp jenkins_cicdjobs.tar.gz s3://webapp-cicd-stack-backup
+
+4. Backup Nexus 
+        systemctl stop nexus
+        cd /opt
+        tar -czvf nexus-cicd-vpro.tgz nexus
+        aws s3 cp nexus-cicd-vpro.tgz s3://webapp-cicd-stack-backup
+
+5. Backu Sonarqube 
+        systemctl stop sonarqube 
+        cd /opt
+        tar -czvf sonar-cicd-vpro.tgz sonar
+        aws s3 cp sonar-cicd-vpro.tgz s3://webapp-cicd-stack-backup
+
+
+4. Restore Jenkins
+        1. create instance
+        2. attach s2 role to instance
+        3. cd /var/lib
+        4. aws s3 cp s3://webapp-cicd-stack-backup/jenkins_cicdjobs.tar.gz . 
+        5. tar xzvf jenkins_cicdjobs.tar.gz
+        6. chown -R jenkins.jenkins jenkins
+        7. systemctl start jenkins
